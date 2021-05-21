@@ -1,0 +1,71 @@
+.button {
+  margin-top: 3rem;
+  width: 16rem;
+  height: 4rem;
+  text-decoration: none;
+  position: relative;
+  @include flexPosition(space-around);
+
+  &:hover .button-bg {
+    width: 18rem;
+  }
+  &:hover .button-text {
+    color: color(tertiary);
+  }
+
+  &:hover .arrows {
+    width: 1.8rem;
+    &:before,&:after {
+      left: 1.1rem;
+    }
+  }
+
+  &-bg {
+    width: 4rem;
+    height: 4rem;
+    background-color: color(primary);
+    border-radius: 4rem;
+    position: absolute;
+    left: 0;
+    transition: width .2s;
+  }
+
+  &-text {
+    font-size: size(xs);
+    line-height: 1;
+    text-transform: uppercase;
+    color: color(primary);
+    padding-top: .35rem;
+    z-index: 10;
+  }
+
+  .arrows {
+  width: 0;
+  height: .2rem;
+  background-color: color(tertiary);
+  position: relative;
+  transition: width .2s;
+
+  &:before {
+    content: '';
+    height: .2rem;
+    width: 1rem;
+    background-color: color(tertiary);
+    position: absolute;
+    left: 0;
+    top: -.3rem;
+    transform: rotate(45deg);
+  } 
+
+  &:after {
+    content: '';
+    height: .2rem;
+    width: 1rem;
+    background-color: color(tertiary);
+    position: absolute;
+    left: 0;
+    top: .3rem;
+    transform: rotate(-45deg);
+  }
+  }
+}

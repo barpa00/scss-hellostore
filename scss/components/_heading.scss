@@ -1,0 +1,18 @@
+
+.heading {
+  grid-column: 4 / 7;
+  grid-row: 2 / 3;
+
+  @include response(xs){
+    grid-column: 1 / 10;
+    padding: 5rem 0;
+  }
+
+  &-text {
+    font-family: 'Pattaya', sans-serif;    
+    font-size: size(xl) * 2;
+    letter-spacing: .5rem;
+    font-weight: lighter;
+    text-align: center;
+  }
+}

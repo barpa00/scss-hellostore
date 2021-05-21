@@ -1,0 +1,87 @@
+@mixin navigation {
+  &-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+  &-img {
+    width: 8rem;
+    height: 100%;
+  }
+
+  &-item {
+    list-style: none;
+  }
+
+  &-link {
+    color: color(primary);
+    text-decoration: none;
+    font-size: size(sm);
+    transition: all .3s;
+    
+    &:hover {
+      color: lighten( color(primary), 40%);
+    }
+  }
+}
+
+@mixin flexPosition ($justify:center,$align:center){
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin footerList {
+  
+  @include response(xs){
+    padding: 0 10rem;
+    margin-bottom: 5rem;
+    &-heading {
+      text-align: center;
+    }
+  }
+
+  &-heading {
+    font-size: size(lg);
+    color: color(primary);
+  }
+
+  &-item {
+    margin: 1rem 0;
+    list-style: none;
+  }
+
+  &-link {
+    text-decoration: none;
+    font-size: size(sm);
+    color: lighten(color(primary), 20%);
+    transition: color .3s;
+
+    &:hover {
+      color: lighten(color(primary), 40%);
+    }
+  }
+}
+
+@mixin  response($breakpoint) {
+
+  @if($breakpoint == xl){
+    @media ( max-width:1200px ) {
+      @content;
+    }
+  }
+
+  @if($breakpoint == lg){
+    @media ( max-width:1000px ) {
+      @content;
+    }
+  }
+
+  @if($breakpoint == xs){
+    @media ( max-width: 373px ) {
+      @content;
+    }
+  }
+  
+}
